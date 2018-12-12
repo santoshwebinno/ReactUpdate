@@ -39,7 +39,7 @@ class VariantSelector extends Component {
       {this.props.option.values.map((value, index) => {
         if(value.value !== 'Default Title') {
           return(
-            <label className="containerRadio" key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}>{value.value}
+            <label className="containerRadio" key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}> 
               <input 
                 type="radio" 
                 name={`${this.props.option.name}--${this.props.option.id}`}
@@ -47,6 +47,7 @@ class VariantSelector extends Component {
                 onClick={this.props.handleOptionChange}
               />
               <span className="checkmark"></span>
+			   <span className="checkmarkvalue">{value.value}</span>
             </label>
             )
           }

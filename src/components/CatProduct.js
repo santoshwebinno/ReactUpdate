@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import VariantSelector from './VariantSelector';  
+import VariantSelector from './VariantSelectorSlider';  
 import {Link} from "react-router-dom";
 import client from '../helpers/ShopifyClient';
 
@@ -72,7 +72,7 @@ class Product extends Component {
     });
     return (
  
-      <div className="Product_item col-6 col-sm-3">
+      <div className="Product_item col-6 col-sm-3 col-md-3 col-lg-2">
 	  <div className="img_cnt">
         {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}
 		</div>

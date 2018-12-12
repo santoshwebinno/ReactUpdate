@@ -60,7 +60,7 @@ class Collection extends React.Component {
 			</div>
 			</div>
 		<div className="row">
-		<div className="col-sm-3">
+		{/**<div className="col-sm-3">
 			<div className="filter_nav">
 				<h2>Filters</h2>
 				<ul>
@@ -108,9 +108,10 @@ class Collection extends React.Component {
 				</ul>
 			</div>
 		</div>
-	 
-<div className="col-sm-9 coll_product__box">
+		*/}
+<div className="col-sm-12 coll_product__box">
         <div className="tiles" aria-live="polite">
+		<div className="row">
           {this.state.items.slice(0, this.state.visible).map((item, index) => {
               return ( 
 					<Product
@@ -126,6 +127,7 @@ class Collection extends React.Component {
 				<p  onClick={this.loadMore}><span>View More</span><i className="fas fa-long-arrow-alt-down"></i></p>
 			</div>
           }
+		  </div>
 		  </div>
 		  </div>
 		  </div>

@@ -1,9 +1,9 @@
 import React from 'react' 
 import ProductImg1 from '../../images/product/product-image-1.jpg';
-import icon_1 from '../../images/icon_1.jpg'; 
-import icon_2 from '../../images/icon_2.jpg'; 
-import icon_3 from '../../images/icon_3.jpg'; 
-import icon_4 from '../../images/icon_4.jpg';  
+import icon_1 from '../../images/fwc.png'; 
+import icon_2 from '../../images/er.png'; 
+import icon_3 from '../../images/hh.png'; 
+import icon_4 from '../../images/sc.png';  
 import {Link} from "react-router-dom";
 import { LocalStorage } from '../../helpers/LocalStorage';
 import VariantSelector from '../VariantSelector';
@@ -120,23 +120,25 @@ class Product extends React.Component {
             <label>Type</label>
             {variantSelectors} </div>
           <div className="pro_qyt">
-            <label className="Product__quntity"> <span>Quantity</span>
+            <label className="Product__quntity"> <span>Quantity</span> </label>
 			<div className="pro_qyt_box">
               <button className="minus_qut" onClick={this.minusQty}>-</button>
-              <input min="1" type="text" value={variantQuantity} onChange={this.handleQuantityChange}>
-              </input>
-              <button onClick={this.plusQty}>+</button>
+              <input min="1" type="text" value={variantQuantity} onChange={this.handleQuantityChange} />
+              <button className="plus_qut" onClick={this.plusQty}>+</button>
 			  </div>
-            </label>
+           
           </div>
           <div className="addbuttonbox">
             <button onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
           </div>
           <div className="fr_bog_tgh_cnt">
+		  
+		  <h3>Frequently Bought Togther</h3>
+		  <p>Select the items you like and press Add to Bag above or buy all with the button below !</p>
             <ul>
-              <li>
+              <li className="active">
                 <div className="pro_item">
-                  <div className="pro_img"><img src={ProductImg1} alt="" /></div>
+                  <div className="pro_img"> <i className="fas fa-check-circle"></i><img src={ProductImg1} alt="" /></div>
                   <Link to="/Product">
                   100g Wax Beads - Choose Your Scent!
                   </Link>
@@ -145,7 +147,7 @@ class Product extends React.Component {
               </li>
               <li>
                 <div className="pro_item">
-                  <div className="pro_img"><img src={ProductImg1} alt="" /></div>
+                  <div className="pro_img"><i className="fas fa-check-circle"></i><img src={ProductImg1} alt="" /></div>
                   <Link to="/Product">
                   100g Wax Beads - Choose Your Scent!
                   </Link>
@@ -154,7 +156,7 @@ class Product extends React.Component {
               </li>
               <li>
                 <div className="pro_item">
-                  <div className="pro_img"><img src={ProductImg1} alt="" /></div>
+                  <div className="pro_img"><i className="fas fa-check-circle"></i><img src={ProductImg1} alt="" /></div>
                   <Link to="/Product">
                   100g Wax Beads - Choose Your Scent!
                   </Link>

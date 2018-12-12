@@ -6,8 +6,10 @@ import Search from "../../images/search";
 import ShoppingBag from "../../images/ShoppingBag";
 import Menu from "../../images/menu";
 import Remove from "../../images/close";
+
  
 class Header extends React.Component {
+	
 	constructor() {
     super();
 
@@ -30,9 +32,11 @@ class Header extends React.Component {
   showSearch(event) {
     this.setState({ displaySearch: true });
   }
-  render() { 
+  render() {
     return (
 <header className="Apps__header">
+
+    
   <div className="container-fluid">
     <div className="row headder">
       <div className="col-4 header_left">

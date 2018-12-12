@@ -78,7 +78,7 @@ class SimpleSlider extends React.Component {
     return (
  
 	<div className="row">
-	<div className="col-sm-12">
+	<div className="col-sm-12 singlepage_slider">
       <Slider {...this.settings} ref={slider => this.slider = (slider) ? slider.innerSlider : null}>
         {productImages}
       </Slider>

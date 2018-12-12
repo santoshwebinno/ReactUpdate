@@ -24,6 +24,7 @@ class SidebarMenu extends React.Component {
     }
     return (
         <div className="side_bar_cnt">
+        <div className="side_box">
           <ul className="menu-content">
             {collect}
           </ul>
@@ -44,12 +45,14 @@ class SidebarMenu extends React.Component {
               </Link>
             </li> 
           </ul>
+		   </div>
           <div className="cruncy_option">
             <select>
               <option>United States (USD) </option>
               <option>India (INR) </option>
             </select>
           </div>
+       
         </div>
       );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import VariantSelector from './VariantSelector';  
+import VariantSelector from './VariantSelectorSlider';  
 import {Link} from "react-router-dom";
 import client from '../helpers/ShopifyClient';
 
