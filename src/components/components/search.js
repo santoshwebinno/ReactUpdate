@@ -78,6 +78,7 @@ class Search extends Component {
 		 onClick={this.toggleHidden.bind(this)}
        />
 	   {!this.state.isHidden && <div className="form_cnt_box">{this.state.query}</div> } 
+	   
      </form>
    )
  }

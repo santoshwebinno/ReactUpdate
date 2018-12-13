@@ -56,7 +56,7 @@ class  Footer extends React.Component {
  <div className="deskfooter">
       <div className="container">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-sm-6 col-md-2">
             <div className="footer-title">
             <h5>Customer Service</h5>
             <ul>
@@ -70,7 +70,7 @@ class  Footer extends React.Component {
             </ul>
           </div>
           </div>
-          <div className="col-md-2">
+          <div className="col-sm-6 col-md-2">
             <div className="footer-title">
             <h5>About Us</h5>
             <ul>
@@ -83,7 +83,7 @@ class  Footer extends React.Component {
             </ul>
           </div>
           </div>
-          <div className="col-md-2">
+          <div className="col-sm-6 col-md-2">
             <div className="footer-title">
             <h5>Services</h5>
             <ul>
@@ -97,7 +97,7 @@ class  Footer extends React.Component {
             </ul>
           </div>
           </div>
-          <div className="col-md-2">
+          <div className="col-sm-6 col-md-2">
             <div className="footer-title">
             <h5>Nordstrom, Inc.</h5>
             <ul>

@@ -80,12 +80,7 @@ class Product extends Component {
 		{variantSelectors}
         </div>
         <h5 className="Product__title"> <Link to={`/product/${this.props.product.handle}`}>{this.props.product.title}</Link></h5>
-        <span className="Product__price">$ {variant.price}</span>
-      
-	  {/**<label className="Product__quntity">
-          Quantity
-          <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input>
-	  </label>**/}
+        <span className="Product__price">$ {variant.price}</span> 
         <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
       </div>
       

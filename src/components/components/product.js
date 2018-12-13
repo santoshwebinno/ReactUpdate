@@ -11,13 +11,23 @@ import client from '../../helpers/ShopifyClient';
 
 import SingleProduct from './singleproduct'; 
  
+ const productId = ' ';
+ export function fetchAllProducts() {
+  return new Promise((resolve, reject) => {
+    client.product.fetch(productId).then((product) => {
+    
+});
+  });
+}
+
+
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 class Product extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.lc = new LocalStorage();
-    this.state = { 
+     this.state = { 
       project: undefined, 
       selectedOptions: {}, 
       selectedVariantQuantity: 1
@@ -128,10 +138,11 @@ class Product extends React.Component {
         <div className="pro_right_box">
           <h2>{this.state.product.title}</h2>
           <div className="pro_review"> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
-            <p>4.8 stars. 4169 Orders</p>
+            <p>4.8 stars. 4169 Orders</p>  
           </div>
+		  <div id="looxReviews" data-product-id={variant.id}></div>  
           <div className="price_cnt">
-            <p>${variant.price}</p>
+            <p>$Frequently Bought Together</p>
           </div>
           <div className="pro_type">
             <label>Type</label>
@@ -174,9 +185,7 @@ class Product extends React.Component {
               <li>
                 <div className="pro_item">
                   <div className="pro_img"><i className="fas fa-check-circle"></i><img src={ProductImg1} alt="" /></div>
-                  <Link to="/Product">
-                  100g Wax Beads - Choose Your Scent!
-                  </Link>
+                  <Link to="/Product">100g Wax Beads - Choose Your Scent!</Link>
                   <div className="setof_pro_type">
                     <select>
                       <option>Set of 12 colors</option>

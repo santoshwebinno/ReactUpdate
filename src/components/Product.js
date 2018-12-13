@@ -73,20 +73,15 @@ class Product extends Component {
     });
     return (
  
-      <div className="Product_item col-6 col-sm-2">
+      <div className="Product_item col-6 col-sm-4 col-md-3 col-lg-2">
 	  <div className="img_cnt">
         {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}
 		</div>
 		 <div className="varient_txt_box">
 		{variantSelectors}
         </div>
-        <h5 className="Product__title"> <Link to={`/product/${this.props.product.handle}`}>{this.props.product.title.substring(0,67)} {(this.props.product.title.length > 67) ? '...' : ''}</Link></h5>
-        <span className="Product__price">$ {variant.price}</span>
-      
-	  {/**<label className="Product__quntity">
-          Quantity
-          <input min="1" type="number" defaultValue={variantQuantity} onChange={this.handleQuantityChange}></input>
-	  </label>**/}
+        <h5 className="Product__title"> <Link to={`/product/${this.props.product.handle}`}>{this.props.product.title.substring(0,67)} {(this.props.product.title.length > 67) ? '...' : ''}</Link></h5> 
+	 
         <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
       </div>
       

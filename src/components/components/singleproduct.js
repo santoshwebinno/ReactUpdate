@@ -45,6 +45,7 @@ class SimpleSlider extends React.Component {
        },
        {
          breakpoint: 767,
+		 adaptiveHeight: true,
          settings: {
         vertical: false,
        verticalSwiping: false,
@@ -56,6 +57,7 @@ class SimpleSlider extends React.Component {
        {
          breakpoint: 480,
          settings: {
+			 adaptiveHeight: true,
         vertical: false,
        verticalSwiping: false,
            slidesToShow: 1,

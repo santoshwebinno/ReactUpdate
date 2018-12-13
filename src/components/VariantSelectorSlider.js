@@ -12,9 +12,18 @@ class VariantSelector extends Component {
       slidesToScroll: 1,
 	   responsive: [
        {
-         breakpoint: 1024,
+         breakpoint: 1026,
          settings: { 
-           slidesToShow: 5,
+           slidesToShow: 3,
+           slidesToScroll: 1,
+           infinite: false,
+           dots: false
+         }
+       },
+	    {
+         breakpoint:800,
+         settings: { 
+           slidesToShow: 3,
            slidesToScroll: 1,
            infinite: false,
            dots: false
@@ -25,7 +34,7 @@ class VariantSelector extends Component {
          settings: {
         vertical: false,
        verticalSwiping: false,
-           slidesToShow: 4,
+           slidesToShow: 3,
            slidesToScroll: 1,
            initialSlide: 1
          }
@@ -66,18 +75,7 @@ class VariantSelector extends Component {
        
 	  </Slider>
       :
-      // <select
-      //   className="Product__option"
-      //   name={this.props.option.name}
-      //   key={this.props.option.key}
-      //   onChange={this.props.handleOptionChange}
-      // >
-      //   {this.props.option.values.map((value) => {
-      //     return (
-      //       <option value={value.value} key={`${this.props.option.name}-${value.value}`}>{`${value.value}`}</option>
-      //     )
-      //   })}
-      // </select>
+     
       <div>
       {this.props.option.values.map((value, index) => {
         if(value.value !== 'Default Title') {

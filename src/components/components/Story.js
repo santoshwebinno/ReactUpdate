@@ -1,9 +1,9 @@
 import React from 'react';
 
-import icon_1 from '../../images/icon_1.jpg'; 
-import icon_2 from '../../images/icon_2.jpg'; 
-import icon_3 from '../../images/icon_3.jpg'; 
-import icon_4 from '../../images/icon_4.jpg';  
+import icon_1 from '../../images/fwc.png'; 
+import icon_2 from '../../images/er.png'; 
+import icon_3 from '../../images/hh.png'; 
+import icon_4 from '../../images/sc.png'; 
  
  
  
