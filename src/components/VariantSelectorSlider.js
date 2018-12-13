@@ -35,7 +35,7 @@ class VariantSelector extends Component {
          settings: {
         vertical: false,
        verticalSwiping: false,
-           slidesToShow: 4,
+           slidesToShow: 3,
            slidesToScroll: 1
          }
        }
@@ -49,7 +49,7 @@ class VariantSelector extends Component {
         let active = { checked: (index == 0) ? 'checked="checked"' : ''}
         return(
 		
-          <div className="containerRadio" key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}>
+          <label className="containerRadio colorVariant" key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}>
             <input 
               type="radio" 
               //{...active}
@@ -58,7 +58,7 @@ class VariantSelector extends Component {
               onClick={this.props.handleOptionChange}
             />
             <span className="checkmark" style={{background: value.value}}></span>
-          </div>
+          </label>
 		   
           )
           })
@@ -82,7 +82,7 @@ class VariantSelector extends Component {
       {this.props.option.values.map((value, index) => {
         if(value.value !== 'Default Title') {
           return(
-            <label className="containerRadio" key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}>
+            <label className={`containerRadio ${this.props.option.name}Variant`} key={`${this.props.option.name}-${value.value}`} title={`${this.props.option.name} - ${value.value}`}>
               <input 
                 type="radio" 
                 name={`${this.props.option.name}--${this.props.option.id}`}

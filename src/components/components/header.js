@@ -59,7 +59,7 @@ class Header extends React.Component {
             <div className="light_search_box_cnt">
               <div className="light_search_box">
                 <Search width={30} />
-                <Searchinput />
+                <Searchinput hideSearch={this.hideSearch}/>
                 <div className="close_search" onClick={this.hideSearch}>
                   <Remove width={20}  />
                 </div>

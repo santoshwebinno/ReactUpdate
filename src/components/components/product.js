@@ -17,35 +17,49 @@ class Product extends React.Component {
 	constructor(props) {
 		super(props);
 		this.lc = new LocalStorage();
-    this.state = { project: undefined, selectedOptions: {}, selectedVariantQuantity: 1 };
+    this.state = { 
+      project: undefined, 
+      selectedOptions: {}, 
+      selectedVariantQuantity: 1
+    };
     
     this.minusQty = this.minusQty.bind(this)
     this.plusQty = this.plusQty.bind(this)
-    }
-
-	componentWillMount() {
-    window.scrollTo(0, 0)
-    const lcProducts = this.lc.getObject('products');
-    if(!lcProducts) {
-    setTimeout(() => {
-      window.location.replace(`/product/${this.props.productId}`)
-    },10000)
-    } else {
-		const product = lcProducts.find( product => product.handle === this.props.productId );
-		this.setState({product: product})
-		
-    let defaultOptionValues = {};
-    if(product) {
-      product.options.forEach((selector) => {
-        defaultOptionValues[selector.name] = selector.values[0].value;
-      });
-    }
-    this.setState({ selectedOptions: defaultOptionValues });
-  }
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.handleQuantityChange = this.handleQuantityChange.bind(this);
     this.findImage = this.findImage.bind(this);
-	}
+    }
+
+    componentWillReceiveProps(nextProps) {
+      const productId = nextProps.match.params.productId;
+      this.setItems(productId)
+    }
+
+    componentWillMount() {
+      window.scrollTo(0, 0)
+      this.setItems(this.props.productId)
+    }
+
+    setItems(productId) {
+        const lcProducts = this.lc.getObject('products');
+        if(!lcProducts) {
+        setTimeout(() => {
+          window.location.replace(`/product/${productId}`)
+        },10000)
+        } else {
+        const product = lcProducts.find( product => product.handle === productId );
+        this.setState({product: product})
+        
+        let defaultOptionValues = {};
+        if(product) {
+          product.options.forEach((selector) => {
+            defaultOptionValues[selector.name] = selector.values[0].value;
+          });
+        }
+        this.setState({ selectedOptions: defaultOptionValues });
+      }
+   
+	  }
 
 	findImage(images, variantId) {
     const primary = images[0];
@@ -93,11 +107,14 @@ class Product extends React.Component {
     let variantQuantity = this.state.selectedVariantQuantity || 1
     let variantSelectors = this.state.product.options.map((option) => {
       return (
-      <VariantSelector
-          handleOptionChange={this.handleOptionChange}
-          key={option.id.toString()}
-          option={option}
-        />
+        <span className={`variant_txt ${option.name}Variant`} key={option.id.toString()}>
+          <VariantSelector
+              handleOptionChange={this.handleOptionChange}
+              key={option.id.toString()}
+              option={option}
+            />
+          <br/>
+        </span>
       );
     });
     return (
@@ -192,9 +209,13 @@ class Product extends React.Component {
               </li>
             </ul>
           </div>
+          {(this.state.product.descriptionHtml.trim() !== '') ?
           <div className="product_detail_cnt">
             <h3>Product Details</h3>
-            {renderHTML(this.state.product.descriptionHtml)} </div>
+            {renderHTML(this.state.product.descriptionHtml)} 
+          </div>
+          : null
+          }
         </div>
       </div>
     </div>

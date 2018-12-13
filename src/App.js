@@ -191,6 +191,7 @@ class Main extends React.Component {
     <Pro 
     addVariantToCart={this.addVariantToCart}
     productId={params.productId}
+    {...path}
     />
     )
   }
