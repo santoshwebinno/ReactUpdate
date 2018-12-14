@@ -23,7 +23,7 @@ class Search extends Component {
 
  handleInputChange = () => {
    if(!this.state.products || this.state.products.length === 0) {
-    console.info('------sssssss', this.state)
+   
       const product = this.lc.getObject('products')
       if(product)
         this.setState({products: product})
@@ -31,7 +31,7 @@ class Search extends Component {
 
     if(this.state.products && this.state.products.length > 0 && this.search.value.length > 2) {
       const searchProduct = this.state.products.filter( product => product.title.toLowerCase().includes(this.search.value.toLowerCase()) );
-      console.info('---Product', searchProduct)
+
       if(searchProduct.length > 0) {
         let showProduct = searchProduct.map((pro) => {
           return (

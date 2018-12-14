@@ -8,18 +8,10 @@ import {Link} from "react-router-dom";
 import { LocalStorage } from '../../helpers/LocalStorage';
 import VariantSelector from '../VariantSelector';
 import client from '../../helpers/ShopifyClient';
-
+ 
 import SingleProduct from './singleproduct'; 
  
- const productId = ' ';
- export function fetchAllProducts() {
-  return new Promise((resolve, reject) => {
-    client.product.fetch(productId).then((product) => {
-    
-});
-  });
-}
-
+ 
 
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 class Product extends React.Component {
@@ -46,7 +38,7 @@ class Product extends React.Component {
     }
 
     componentWillMount() {
-      window.scrollTo(0, 0)
+      window.scrollTo(0,0)
       this.setItems(this.props.productId)
     }
 
@@ -117,6 +109,7 @@ class Product extends React.Component {
     let variantQuantity = this.state.selectedVariantQuantity || 1
     let variantSelectors = this.state.product.options.map((option) => {
       return (
+        (option.values.length > 1 || (option.values.length == 1 && option.values[0].value != 'Default Title')) ?
         <span className={`variant_txt ${option.name}Variant`} key={option.id.toString()}>
           <VariantSelector
               handleOptionChange={this.handleOptionChange}
@@ -125,6 +118,7 @@ class Product extends React.Component {
             />
           <br/>
         </span>
+        : undefined
       );
     });
     return (
@@ -142,11 +136,13 @@ class Product extends React.Component {
           </div>
 		  <div id="looxReviews" data-product-id={variant.id}></div>  
           <div className="price_cnt">
-            <p>$Frequently Bought Together</p>
+            <p>${variant.price}</p>
           </div>
+          {(variantSelectors.length > 0 && variantSelectors[0]) ?
           <div className="pro_type">
             <label>Type</label>
             {variantSelectors} </div>
+            : null }
           <div className="pro_qyt">
             <label className="Product__quntity"> <span>Quantity</span> </label>
 			<div className="pro_qyt_box">

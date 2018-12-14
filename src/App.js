@@ -227,7 +227,7 @@ class Main extends React.Component {
   
   render() {
   return (
-    <Router>
+    <Router onUpdate={() => window.scrollTo(0, 0)}>
 	<div className="fullwidth"> 
   <Sidebar
     sidebar={<SidebarMenu sidebarOpen={this.onSetSidebarOpen}/>}

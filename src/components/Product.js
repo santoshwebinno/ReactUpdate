@@ -29,7 +29,6 @@ class Product extends Component {
 
   handleOptionChange(event) {
     const target = event.target
-    console.info('-----------', target)
     const nameSplit = target.name.split('--')
     let selectedOptions = this.state.selectedOptions;
     selectedOptions[nameSplit[0]] = target.value;
@@ -80,7 +79,13 @@ class Product extends Component {
 		 <div className="varient_txt_box">
 		{variantSelectors}
         </div>
-        <h5 className="Product__title"> <Link to={`/product/${this.props.product.handle}`}>{this.props.product.title.substring(0,67)} {(this.props.product.title.length > 67) ? '...' : ''}</Link></h5> 
+        <h5 className="Product__title"> 
+        {/* <Link to={`/product/${this.props.product.handle}`}> */}
+        <a href={`/product/${this.props.product.handle}`} >
+          {this.props.product.title.substring(0,67)} {(this.props.product.title.length > 67) ? '...' : ''}
+        </a>
+          {/* </Link> */}
+        </h5> 
 	 
         <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
       </div>
