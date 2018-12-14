@@ -8,10 +8,18 @@ import {Link} from "react-router-dom";
 import { LocalStorage } from '../../helpers/LocalStorage';
 import VariantSelector from '../VariantSelector';
 import client from '../../helpers/ShopifyClient';
- 
+
 import SingleProduct from './singleproduct'; 
  
- 
+ const productId = ' ';
+ export function fetchAllProducts() {
+  return new Promise((resolve, reject) => {
+    client.product.fetch(productId).then((product) => {
+    
+});
+  });
+}
+
 
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 class Product extends React.Component {
@@ -133,8 +141,10 @@ class Product extends React.Component {
           <h2>{this.state.product.title}</h2>
           <div className="pro_review"> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i>
             <p>4.8 stars. 4169 Orders</p>  
-          </div>
-		  <div id="looxReviews" data-product-id={variant.id}></div>  
+          </div> 
+	 <div id="looxReviews" data-product-id={this.state.product.id} className="loox-reviews-default">{this.state.product.metafields}</div>
+	 
+	 
           <div className="price_cnt">
             <p>${variant.price}</p>
           </div>
