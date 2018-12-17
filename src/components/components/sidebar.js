@@ -10,15 +10,19 @@ class SidebarMenu extends React.Component {
     this.lc = new LocalStorage();
   }
 
+  showCategories = ['art-more','best-selling', 'sale'];
+
   render() { 
     let collect = null;
     const collections = this.lc.getObject('collections');
     if(collections) {
       collect = collections.map((collection) => {
         return (
+          (this.showCategories.indexOf(collection.handle) > -1) ? 
           <li key={collection.id} onClick={() => this.props.sidebarOpen(false)}>
             <NavLink exact activeClassName="current" to={`/${collection.handle}`} ><span>{collection.title}</span><Icon width={30} /></NavLink>
           </li>
+          : null
         );
       });
     }
@@ -30,7 +34,7 @@ class SidebarMenu extends React.Component {
           </ul>
           <ul className="menu-page-content">
             <li onClick={() => this.props.sidebarOpen(false)}>
-              <Link to="/AboutUs" >
+              <Link to="/about" >
               About Us
               </Link>
             </li>

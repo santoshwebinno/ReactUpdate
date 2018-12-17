@@ -4,6 +4,8 @@ import icon_1 from '../../images/fwc.png';
 import icon_2 from '../../images/er.png'; 
 import icon_3 from '../../images/hh.png'; 
 import icon_4 from '../../images/sc.png';  
+import SubtractCircle from "../../images/subtract-circle";
+import AddCircle from "../../images/add-circle";
 import {Link} from "react-router-dom";
 import { LocalStorage } from '../../helpers/LocalStorage';
 import VariantSelector from '../VariantSelector';
@@ -156,12 +158,11 @@ class Product extends React.Component {
           <div className="pro_qyt">
             <label className="Product__quntity"> <span>Quantity</span> </label>
 			<div className="pro_qyt_box">
-              <button className="minus_qut" onClick={this.minusQty}>-</button>
+              <button onClick={this.minusQty}><SubtractCircle /></button>
               <input min="1" type="text" value={variantQuantity} onChange={this.handleQuantityChange} />
-              <button className="plus_qut" onClick={this.plusQty}>+</button>
-			  </div>
-           
-          </div>
+              <button  onClick={this.plusQty}><AddCircle /></button>
+			  </div>  
+		   </div>
           <div className="addbuttonbox">
             <button onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
           </div>
@@ -235,6 +236,33 @@ class Product extends React.Component {
       </div>
     </div>
   </div>
+    <div className="add_cart_cnt">
+  <div className="row">
+  <div className="col-7">
+	{(variantSelectors.length > 0 && variantSelectors[0]) ?
+          <div className="pro_type">
+            <label>Type</label>
+            {variantSelectors} </div>
+            : null }
+			</div>
+			 <div className="col-5">
+          <div className="pro_qyt">
+            <label className="Product__quntity"> <span>Quantity</span> </label>
+			<div className="pro_qyt_box">
+              <button onClick={this.minusQty}><SubtractCircle /></button>
+			  
+              <input min="1" type="text" value={variantQuantity} onChange={this.handleQuantityChange} />
+              <button  onClick={this.plusQty}><AddCircle /></button>
+			  </div>
+			  </div>
+          </div>
+		   <div className="col-12">
+          <div className="addbuttonbox">
+            <button onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
+          </div>
+          </div>
+</div>
+</div>
 </div>
 );
     } else {
