@@ -3,7 +3,7 @@ import ProductImg1 from '../../images/product/product-image-1.jpg';
 import Product from '../CatProduct';
 import {Link} from "react-router-dom";
 import { LocalStorage } from '../../helpers/LocalStorage';
- 
+import Arrow from "../../images/arrow";
 
 class Collection extends React.Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class Collection extends React.Component {
           </div>
           {this.state.visible < this.state.items.length &&
 			 <div className="viewmore_cnt">
-				<p onClick={this.loadMore}><span>View More</span><i className="fas fa-long-arrow-alt-down"></i></p>
+				<p onClick={this.loadMore}><span>View More</span><Arrow/></p>
 			</div>
           }
 		  </div>

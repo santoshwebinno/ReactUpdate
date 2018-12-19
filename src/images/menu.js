@@ -17,11 +17,14 @@ const SVG = ({
     className={`svg-icon ${className || ""}`}
     xmlnsXlink="http://www.w3.org/1999/xlink"
   > 
-	 
-	<path fill={fill} d="M3,7.5C2.724,7.5,2.5,7.276,2.5,7S2.724,6.5,3,6.5h18c0.276,0,0.5,0.224,0.5,0.5S21.276,7.5,21,7.5H3z"/>
-	<path fill={fill} d="M3,12.5c-0.276,0-0.5-0.224-0.5-0.5c0-0.276,0.224-0.5,0.5-0.5h18c0.276,0,0.5,0.224,0.5,0.5c0,0.276-0.224,0.5-0.5,0.5H3z
-		"/>
-	<path fill={fill} d="M3,17.5c-0.276,0-0.5-0.224-0.5-0.5s0.224-0.5,0.5-0.5h18c0.276,0,0.5,0.224,0.5,0.5s-0.224,0.5-0.5,0.5H3z"/>
+	  <g id="Page-1" stroke="none" stroke-width="1" fill="{fill}" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="navigation-menu" transform="translate(1.000000, 1.000000)" stroke="#000000">
+            <path d="M13,0 L0,0" id="Shape"></path>
+            <path d="M18,5 L0,5" id="Shape"></path>
+            <path d="M13,10 L0,10" id="Shape"></path>
+        </g>
+    </g>
+ 
   </svg>
 );
 

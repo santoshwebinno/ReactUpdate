@@ -29,7 +29,7 @@ class Search extends Component {
         this.setState({products: product})
    }
 
-    if(this.state.products && this.state.products.length > 0 && this.search.value.length > 2) {
+    if(this.state.products && this.state.products.length > 0 && this.search.value.length > 0) {
       const searchProduct = this.state.products.filter( product => product.title.toLowerCase().includes(this.search.value.toLowerCase()) );
 
       if(searchProduct.length > 0) {

@@ -59,7 +59,7 @@ class Header extends React.Component {
       <div className="col-4 header_left">
         <div className="nav-side-menu">
           <div className="toggle-button" onClick={() => this.props.sidebarOpen(true)}>
-            <Menu width={60}  />
+            <Menu width={50}  />
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ class Header extends React.Component {
         <ul>
           <li>
             <div className="search_c" onClick={this.handleClick}>
-              <Search width={40}  />
+              <Search width={35}  />
             </div>
             { this.state.popupVisible ? (
             <div className="light_search_box_cnt">
@@ -89,7 +89,7 @@ class Header extends React.Component {
             } </li>
           <li> {!this.state.isCartOpen &&
             <div className="cart_icon" onClick={()=> this.props.openCartSlide(true)}>
-              <ShoppingBag width={40}  />
+              <ShoppingBag width={35}  />
               {(this.props.cartCount > 0) ? <span className="cartCount">({this.props.cartCount})</span> : null }</div>
             } </li>
         </ul>
