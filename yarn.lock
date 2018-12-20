@@ -8480,6 +8480,11 @@ react-message-context@^0.3.1:
   resolved "https://registry.yarnpkg.com/react-message-context/-/react-message-context-0.3.1.tgz#f29e5262fd9af771757af9489caf2b1f35f3defa"
   integrity sha512-3rTpl8E2eE1Ocnp5pfbBLZwZ+uQ/qwaVgBJm5mZpElQaHOaJTe0pfDn2a4zJgg5ShUFuewLwdgY7CEqsuPqhlg==
 
+react-native-base64@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-base64/-/react-native-base64-0.0.2.tgz#c28463c2c6779ac3ec5fdd12979ebc8c5f9b410a"
+  integrity sha512-Fu/J1a2y0X22EJDWqJR2oEa1fpP4gTFjYxk8ElJdt1Yak3HOXmFJ7EohLVHU2DaQkgmKfw8qb7u/48gpzveRbg==
+
 react-router-dom@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
