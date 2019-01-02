@@ -74,10 +74,9 @@ class Search extends Component {
          placeholder="What can we help you find?"
 		 type="text"
          ref={input => this.search = input}
-         onChange={this.handleInputChange}
-		 onClick={this.toggleHidden.bind(this)}
+         onChange={this.handleInputChange} 
        />
-	   {!this.state.isHidden && <div className="form_cnt_box">{this.state.query}</div> } 
+	    <div className="form_cnt_box">{this.state.query}</div> 
 	   
      </form>
    )

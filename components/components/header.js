@@ -78,7 +78,7 @@ class Header extends React.Component {
                 <Search width={30} />
                 <Searchinput hideSearch={this.handleClick}/>
                 <div className="close_search" onClick={this.handleClick}>
-                  <Remove width={20}  />
+                  <Remove width={15}  />
                 </div>
               </div>
             </div>

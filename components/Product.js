@@ -88,7 +88,7 @@ class Product extends Component {
  
       <div className="Product_item col-6 col-sm-4 col-md-3 col-lg-2">
 	  <div className="img_cnt">
-        {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}
+         <a href={`/product/${this.props.product.handle}`} >{this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null} </a> 
 		</div>
 		
 		 <div className="varient_txt_box">
@@ -101,15 +101,7 @@ class Product extends Component {
         </a> 
         </h5> 
 		<span className="Product__price">${variant.price}</span>
-			{/* <div className="pro_qyt">
-            <label className="Product__quntity"> <span>Quantity</span> </label>
-			<div className="pro_qyt_box">
-              <button onClick={this.minusQty}><SubtractCircle /></button>
-              <input min="1" type="text" value={variantQuantity} onChange={this.handleQuantityChange} />
-              <button  onClick={this.plusQty}><AddCircle /></button>
-			  
-			  </div>  
-			</div>*/}
+			 
         <button className="Product__buy button" onClick={() => this.props.addVariantToCart(variant.id, variantQuantity)}>Add to Bag</button>
       </div>
       

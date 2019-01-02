@@ -87,7 +87,7 @@ class Product extends Component {
  
       <div className="Product_item col-6 col-sm-3 col-md-3 col-lg-3">
 	  <div className="img_cnt">
-        {this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}
+        <a href={`/product/${this.props.product.handle}`} >{this.props.product.images.length ? <img src={variantImage.src} alt={`${this.props.product.title} product shot`}/> : null}</a>
 		</div>
 		
 		 <div className="varient_txt_box">
